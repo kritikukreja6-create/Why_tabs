@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Tab</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 Why Tab</h1>
+      <p class="subtitle">Remember WHY you opened each tab</p>
+    </header>
+    
+    <main>
+      <!-- Intent prompt section (shown for new tabs) -->
+      <div id="intent-prompt" style="display: none;">
+        <h3>Why did you open this tab?</h3>
+        <p class="prompt-subtitle">Help yourself stay focused</p>
+        
+        <div class="intent-options">
+          <button class="intent-option" data-intent="Study">📚 Study</button>
+          <button class="intent-option" data-intent="Work">💼 Work</button>
+          <button class="intent-option" data-intent="Shopping">🛒 Shopping</button>
+          <button class="intent-option" data-intent="Browsing">🌐 Browsing</button>
+        </div>
+        
+        <div class="custom-note">
+          <label for="custom-note">Or write a custom note:</label>
+          <input 
+            type="text" 
+            id="custom-note" 
+            placeholder="e.g., Research for project..."
+            maxlength="100"
+          />
+        </div>
+        
+        <div class="prompt-actions">
+          <button id="skip-btn">Skip</button>
+          <button id="save-btn">Save Intent</button>
+        </div>
+      </div>
+      
+      <!-- Tab list section -->
+      <div id="tab-list">
+        <p class="empty-state">No tabs tracked yet. Open a new tab to get started!</p>
+      </div>
+    </main>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

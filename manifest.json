@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Why Tab",
+  "version": "1.0",
+  "description": "Remember WHY you opened each tab and stay focused",
+  
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Why Tab - Remember your intent"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["prompt.html", "prompt.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
